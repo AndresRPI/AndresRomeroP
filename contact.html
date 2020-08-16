@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Randalls</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+   <!-- START: header -->
+  
+    <!-- START: header -->
+  
+  <div class="probootstrap-loader" style="display: none;"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container" id="myDIV">
+      
+        <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menú</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+       <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li><a href="index.html">Randalls</a></li>
+
+           
+
+            <li><a href="listadocatalogo.html">Catálogo</a></li>
+
+                        <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="contact.html">Registrate</a></li>
+                        
+
+            
+          
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="probootstrap-burger-menu"><i>Menú</i></a>
+            <p>Dirección</p><p>
+            </p><p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Contactar</p>
+            <ul class="social-buttons">
+              <li><a href="https://www.twitter.com/Randalls"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/Randalls/"><i class="icon-facebook2"></i></a></li>
+              <li><a href="https://www.instagram.com/Diegojp13"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+</script>
+  </header>
+  
+  <!-- END: header -->  <!-- END: header -->
+
+  <div class="probootstrap-main">
+
+   <!--Formulario-->
+
+
+    <section class="probootstrap-section probootstrap-animate fadeInUp probootstrap-animated">
+      <div class="container">
+        <div class="row">
+
+        <div class="col-md-6 col-md-offset-3">
+          <form action="register.html" method="post" class="probootstrap-form probootstrap-form-box mb60">
+            <div class="row">
+<div class="col-md-12 alert alert-primary" role="alert" style="text-align:center;"><h1>Regístrate!</h1></div>
+
+                <div class="col-md-12">
+                <div class="form-group">
+                  <label for="NOMBRE_DIST">Nombre Completo</label>
+                  <input required="" type="text" class="form-control" id="NOMBRE_DIST" name="NOMBRE_DIST">
+                </div>
+              </div>
+              <div class="col-md-4 mt-1">
+              <label for="RIF">Tipo de documento</label>
+                   <select class="custom-select" id="inputGroupSelect01">
+                     <option selected=""></option>
+                     <option value="1">V</option>
+                     <option value="2">J</option>
+                     <option value="3">P</option>
+                     <option value="3">E</option>
+                   </select>
+              </div>
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="RIF">Documento de identificación</label>
+                  <input required="" type="text" min="5" minlength="5" maxlength="11" step="1" pattern="\d+" class="form-control" id="RIF" name="RIF">
+                </div>
+                  <!-- Valida que el rif no sea repetido -->
+                           </div>
+            </div>
+
+            
+
+            <div class="form-group">
+              <label for="DIRECCION_DIST">Dirección</label>
+              <input required="" type="text" class="form-control" id="DIRECCION_DIST" name="DIRECCION_DIST">
+            </div>
+           
+              <hr>
+
+              
+            <div class="form-group">
+              <label for="EMAIL">Correo electrónico</label>
+              <input required="" type="email" class="form-control" id="EMAIL" name="EMAIL" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                          </div>
+           
+              <hr>
+        
+          
+               <div class="form-group">
+                <label for="PASSWORD">Contraseña</label>
+                <input required="" type="password" class="form-control" id="PASSWORD" name="PASSWORD">
+
+                
+               </div> 
+               <div class="form-group">
+                <label for="REPASSWORD">Repetir Contraseña</label>
+                <input required="" type="password" class="form-control" id="REPASSWORD" name="REPASSWORD">
+
+                               </div>
+             <div class="form-group">
+              <input required="" type="submit" class="btn btn-primary" id="submit" name="submit" value="Enviar formulario">
+            </div>
+               </form></div> 
+
+           
+          
+
+
+        </div>        
+
+        </div>
+      </section></div>
+    
+  <!-- END section -->
+       
+
+  
+  <footer class="probootstrap-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p>© 2020 <a> ANDRES ROMERO AND RANDALLS INC WEB</a>. Todos los derechos reservados.
+        </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
+  </div>
+  
+
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+  
+  
+</body></html>

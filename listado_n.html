@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Randalls</title>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet"> -->
+   
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vendor/icomoon.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->  
+  <style>
+  .btn {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 1em 1.5em;
+  margin-right: 2em;
+  background: none;
+  color:black;  
+  font-weight: bold;
+  position: relative;
+  transition:color 0.25s ease;
+  border:3px solid black;
+}
+
+.btn:hover {
+  color:white;
+}
+
+.btn::after {
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: green;
+  transform-origin:left;
+  transition:width 0.25s ease;
+  z-index:-1;
+}
+
+.btn:hover::after {
+  width: 100%;
+}
+  </style>
+</head>
+<body>
+
+      <!-- START: header -->
+  
+  <div class="probootstrap-loader" style="display: none;"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container" id="myDIV">
+      
+        <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menú</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+       <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li><a href="index.html">Randalls</a></li>
+
+           
+
+            <li><a href="listadocatalogo.html">Catálogo</a></li>
+
+                        
+
+                        <li><a>Administrador </a>     </li>
+            <li><a href="listado_n.html">Lista de productos</a></li>
+            <li><a href="listapedidos.html">Listado de órdenes</a></li>
+            <li><a href="logout.html">Cerrar Sesión</a></li>
+            
+          
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="probootstrap-burger-menu"><i>Menú</i></a>
+            <p>Dirección</p><p>
+            </p><p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Contactar</p>
+            <ul class="social-buttons">
+              <li><a href="https://www.twitter.com/Randalls"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/Randalls/"><i class="icon-facebook2"></i></a></li>
+              <li><a href="https://www.instagram.com/Diegojp13"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+</script>
+  </header>
+  
+  <!-- END: header -->  
+
+        <div class="probootstrap-main" style="margin-top: 100px">
+
+   <!--Listado-->
+
+   <section class="probootstrap-section-half ">
+      <div class="container" style="padding-bottom:30px">
+     
+                  <br>
+          <div style="text-align:center;">
+          <label style="text-align:center; font-size:25px; color:black;" class="text-center">
+           <button class="btn" data-toggle="modal" data-target="#Addnew">
+          Agregar nuevo producto
+          </button></label>
+          <label style="text-align:center; font-size:25px;" class="text-center"> 
+           <button class="btn" data-toggle="modal" data-target="#addnewgenre">
+           Nueva categoría
+           </button>
+          </label>
+
+        
+<div id="log">
+   
+</div>
+
+ 
+        
+      </div>
+    </div></section>
+ 
+ <div class="container">
+   
+   <form action="pedido.html" method="post" accept-charset="utf-8">
+     <div class="row">
+                <div class="col-md-3 col-sm-4 col-12">
+        <div class="card mb-4">
+                          <img class="card-img-top w-100" style="width:250px; height:280px;" src="upload/23-Pringles.jpg">
+                
+                
+
+            <div class="card-body">
+              <h5 class="card-title">Nombre: Pringles </h5>
+              <p class="card-text">Descripcion: Patatas fritas compuestas por patata deshidratada, almidón de trigo y más.</p>
+              <p class="card-text">Categoria: Chucherias</p>
+              <p class="card-text">Precio: $20000.00</p>
+
+              
+              <a style="cursor:pointer; " onclick="getdatapublic(1)"> Editar</a>
+
+
+              <a href="deletepub.html?ISBN=48" onclick="return confirm('Estás seguro de que deseas eliminar este producto?')" ?=""><i>Borrar</i></a>
+              
+                              
+       </div>
+          </div>
+         </div>
+    
+                <div class="col-md-3 col-sm-4 col-12">
+        <div class="card mb-4">
+                          <img class="card-img-top w-100" style="width:250px; height:280px;" src="upload/23-Galletas Oreo.jpg">
+                
+                
+
+            <div class="card-body">
+              <h5 class="card-title">Nombre: Galletas Oreo </h5>
+              <p class="card-text">Descripcion: Galletas circulares de chocolate con un relleno dulce blanco.</p>
+              <p class="card-text">Categoria: Chucherias</p>
+              <p class="card-text">Precio: $8000.00</p>
+
+              
+              <a style="cursor:pointer; " onclick="getdatapublic(2)"> Editar</a>
+
+
+              <a href="deletepub.html?ISBN=49" onclick="return confirm('Estás seguro de que deseas eliminar este producto?')" ?=""><i>Borrar</i></a>
+              
+                              
+       </div>
+          </div>
+         </div>
+    
+                <div class="col-md-3 col-sm-4 col-12">
+        <div class="card mb-4">
+                          <img class="card-img-top w-100" style="width:250px; height:280px;" src="upload/21-Hamburguesa.jpg">
+                
+                
+
+            <div class="card-body">
+              <h5 class="card-title">Nombre: Hamburguesa </h5>
+              <p class="card-text">Descripcion: Una hamburguesa</p>
+              <p class="card-text">Categoria: Comida</p>
+              <p class="card-text">Precio: $60.00</p>
+
+              
+              <a style="cursor:pointer; " onclick="getdatapublic(0)"> Editar</a>
+
+
+              <a href="deletepub.html?ISBN=50" onclick="return confirm('Estás seguro de que deseas eliminar este producto?')" ?=""><i>Borrar</i></a>
+              
+                              
+       </div>
+          </div>
+         </div>
+    
+                <div class="col-md-3 col-sm-4 col-12">
+        <div class="card mb-4">
+                          <img class="card-img-top w-100" style="width:250px; height:280px;" src="upload/7-Gorra.jpg">
+                
+                
+
+            <div class="card-body">
+              <h5 class="card-title">Nombre: Gorra </h5>
+              <p class="card-text">Descripcion: Gorra de algodon</p>
+              <p class="card-text">Categoria: ROPA</p>
+              <p class="card-text">Precio: $40.00</p>
+
+              
+              <a style="cursor:pointer; " onclick="getdatapublic(0)"> Editar</a>
+
+
+              <a href="deletepub.html?ISBN=51" onclick="return confirm('Estás seguro de que deseas eliminar este producto?')" ?=""><i>Borrar</i></a>
+              
+                              
+       </div>
+          </div>
+         </div>
+    
+                <div class="col-md-3 col-sm-4 col-12">
+        <div class="card mb-4">
+                          <img class="card-img-top w-100" style="width:250px; height:280px;" src="upload/23-Pingüino.png">
+                
+                
+
+            <div class="card-body">
+              <h5 class="card-title">Nombre: Pingüino </h5>
+              <p class="card-text">Descripcion: Dulce</p>
+              <p class="card-text">Categoria: Chucherias</p>
+              <p class="card-text">Precio: $25.00</p>
+
+              
+              <a style="cursor:pointer; " onclick="getdatapublic(0)"> Editar</a>
+
+
+              <a href="deletepub.html?ISBN=52" onclick="return confirm('Estás seguro de que deseas eliminar este producto?')" ?=""><i>Borrar</i></a>
+              
+                              
+       </div>
+          </div>
+         </div>
+    
+             
+     
+    
+    
+</div>
+</form> 
+
+
+
+ </div>
+      
+
+  </div>
+
+
+          
+<div class="modal fade" id="Addnew" tabindex="-1" role="dialog" aria-labelledby="AddnewTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Agregar nuevo producto</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="CERRAR">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     <div class="row">
+
+        <div class="col-md-12">
+          <form action="addpublication.html" id="addform" method="post" class="probootstrap-form probootstrap-form-box mb60" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="ISBN">Codigo</label>
+                  <input required="" type="text" class="form-control" id="ISBN" name="ISBN">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Fecha">Fecha</label>
+                  <input required="" type="date" class="form-control" id="Fecha" name="Fecha">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Titulo">Titulo</label>
+              <input required="" type="text" class="form-control" id="Titulo" name="Titulo">
+            </div>
+            <div class="form-group">
+              <label for="Titulo">Descripcion</label>
+              <input required="" type="text" class="form-control" id="Desecripcion" name="Descripcion">
+            </div>
+             <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="genero">Tipo</label>
+                   <select class="form-control" id="genero" name="genero">
+                                          <option value="7">
+                        ROPA                      </option>
+                  
+                                          <option value="21">
+                        Comida                      </option>
+                  
+                                          <option value="23">
+                        Chucherias                      </option>
+                  
+                                      </select>
+                </div>
+              </div>
+
+              <!--<div class="col-md-6">
+              <div class="form-group">
+                <label for="autor">Autor</label>
+                  <select class="form-control" id="Autor" name="Autor">
+                                       <option value="1">
+                        BENJAMIN BLACK                    </option>
+                  
+                                        <option value="2">
+                        CARRIE SNYDER                    </option>
+                  
+                                        <option value="3">
+                        ALEX ROVIRA                    </option>
+                  
+                                        <option value="4">
+                        FRANCESC MIRALLES                    </option>
+                  
+                                        <option value="5">
+                        Johan Marin                    </option>
+                  
+                                    </select>
+                  <small> <a data-toggle="modal" data-target="#addnewautor" title="">Agregar Autor</a></small>
+                </div>
+              </div> -->
+              <div class="col-md-6">
+            <div class="form-group">
+                  <label for="Precio">Precio</label>
+                  <input required="" type="number" min="1" max="1000000" class="form-control" id="Precio" name="Precio">
+                </div>
+              </div>
+
+              
+            </div>
+            <div class="form-group">
+            <label for="Precio">Foto</label>
+                  <input class="log-in" type="file" placeholder="SELECCIONE ARCHIVO" id="file" name="file" required="">
+            </div>  
+            <hr style="border: 1px solid grey; background-color:grey;">  
+
+            <div class="form-group" style="text-align:center; margin:10px;">
+        <input style="" type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+        </div>  
+            <div class="form-group" style="text-align:center;">
+        <input required="" type="submit" name="submit" id="submit" class="btn btn-primary" value="Agregar Producto">
+        </div>  
+          </form>
+        </div>        
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Modal - AGREGAR CATEGORIA -->
+<!-- // Modal -->
+<div class="modal fade" id="addnewgenre" tabindex="-1" role="dialog" aria-labelledby="addnewgenreTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="text-align:center;">
+        <h3 class="modal-title" style="text-align:center;" id="exampleModalLongTitle">TIPO DE PRODUCTO</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+     <div class="row">
+
+        <div class="col-md-12">
+          <form action="addgenero.html" id="addform" method="post" class="probootstrap-form probootstrap-form-box mb60">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Genero">NUEVO TIPO</label>
+                  <input required="" type="text" class="form-control" id="Genero" name="genero">
+                </div>
+                <input required="" type="submit" class="btn btn-primary" name="" value="Agregar">
+              </div>
+              
+            </div>
+                          
+          </form>
+        </div>        
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal - EDITAR PRODUCTO -->
+<div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Editar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+              <div class="modal-body">
+     <div class="row">
+
+        <div class="col-md-12">
+          <form action="updatepub.html" id="updform" method="post" class="probootstrap-form probootstrap-form-box mb60">
+            <div class="row">
+              <div class="col-md-6">
+                  <input required="" type="hidden" name="id" id="id_u" value="">
+                <div class="form-group">
+                  <label for="ISBN">ISBN</label>
+                  <input required="" type="text" class="form-control" id="ISBN_u" name="ISBN" readonly="">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="Fecha">Fecha</label>
+                  <input required="" type="text" class="form-control" id="Fecha_u" name="Fecha">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="Titulo">Titulo</label>
+              <input required="" type="text" class="form-control" id="Titulo_u" name="Titulo">
+            </div>
+             <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="ISBN">TIPO</label>
+                   <select class="form-control" id="genero_u" name="genero">
+                   <option value="7"> ROPA</option>
+                   <option value="21">Comida</option>
+                  
+                                          <option value="23">
+                        Chucherias                      </option>
+                  
+                                      </select>
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+            <div class="form-group">
+                  <label for="Precio">Precio</label>
+                  <input required="" type="number" min="1" max="1000000" class="form-control" id="Precio_u" name="Precio">
+                </div>
+              </div>
+            </div>
+            <hr style="border: 1px solid grey; background-color:grey;">  
+
+            <div class="form-group" style="text-align:center; margin:10px;">
+        <input style="" type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancelar">
+        </div>  
+            <div class="form-group" style="text-align:center;">
+        <input required="" type="submit" name="submit" id="submit" class="btn btn-primary" value="Agregar Producto">
+        </div>   
+          </form>
+        </div>        
+
+        </div>
+      </div>  
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addnewautor" tabindex="-1" role="dialog" aria-labelledby="addnewautorTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     <div class="row">
+
+        <div class="col-md-12">
+          <form action="addautor.html" id="addform" method="post" class="probootstrap-form probootstrap-form-box mb60">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="nombre">Autor</label>
+                  <input required="" type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+
+                 <div class="form-group">
+                  <label for="fecha">Fecha</label>
+                  <input required="" type="date" class="form-control" id="fecha" name="fecha">
+                </div>
+                <input required="" type="submit" class="btn btn-primary" name="" value="Agregar">
+              </div>
+              
+            </div>
+                          
+          </form>
+        </div>        
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+
+
+  
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+  
+
+  <script type="text/javascript">
+
+
+    function  checkbox(id)
+    { var target =  '#number'+id;
+      var target2 = '#check'+id;
+      if($(target2).is(':checked'))
+      {
+        console.log("YES");
+        $(target).prop('disabled', false); // If checked enable item  
+      } else{
+        console.log('NO');
+        $(target).prop('disabled', true); // If checked disable item  
+        $(target).val('');
+      }
+      console.log(target2.checked);
+      
+
+    };
+// esto es para hacer el submit del form con un boton fuera del form
+ $('#newpub').on('click', function(event) {
+   event.preventDefault();
+
+   $('#addform').submit();
+ });
+
+$('#updpub').on('click', function(event) {
+   event.preventDefault();
+
+   $('#updform').submit();
+ });
+
+
+function getdatapublic(id) {
+    // Add User ID to the hidden field for furture usage
+
+    $.post("ajax/getdatapub.html", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var pub = JSON.parse(data);
+            // Assing existing values to the modal popup fields
+            $('#id_u').val(pub.ID_PUBLICACION);
+            $('#ISBN_u').val(pub.ISBN);
+            $('#Fecha_u').val(pub.FECHA_PUB);
+            $('#Titulo_u').val(pub.NOMBRE_PUBLICACION);
+            $('#genero_u').val(pub.ID_GENERO);
+            $('#fecha_u').val(pub.ID_CATEGORIA);
+            $('#Autor_u').val(pub.ID_AUTOR);
+            $('#Precio_u').val(pub.PRECIO);
+           
+        }
+    );
+    // Open modal popup
+    $("#update_user_modal").modal("show");
+}
+ //file type validation
+ $("#file").change(function() {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match= ["image/jpeg","image/png","image/jpg"];
+        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+            alert('Please select a valid image file (JPEG/JPG/PNG).');
+            $("#file").val('');
+            return false;
+        }
+    });
+    /*
+    Intento de ajax innecesario pero puede servir para un futuro
+
+       function add_new_w_ajax() 
+        {
+               var ISBN = $('#ISBN').val();
+               var Fecha = $('#Fecha').val();
+               var Titulo = $('#Titulo').val();
+               var genero = $('#genero').val();
+               var categoria = $('#categoria').val();
+          
+            $.ajax(
+            {
+                url:'addpublication.html',
+                type:'POST',
+                cache: false,
+                data:
+                {
+                    ISBN : ISBN,
+                    Fecha : Fecha,
+                    Titulo : Titulo,
+                    genero : genero,
+                    categoria : categoria,
+                },
+                success:function(response)
+                {
+                
+                 $(location).attr('href', 'listado.html')
+                },
+                error:function(jqXHR,status,error) 
+                {
+                    notify('Error', 'Ajax: ' + error, 'error');
+                    return false;
+                },
+               
+            });
+        }
+*/
+
+  </script>
+
+</body></html>

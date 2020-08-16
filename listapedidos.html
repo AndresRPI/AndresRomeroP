@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html><head>
+
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Randalls</title>
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vendor/icomoon.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.min.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->	
+
+</head>
+<body class="">
+
+      <!-- START: header -->
+  
+  <div class="probootstrap-loader" style="display: none;"></div>
+
+  <header role="banner" class="probootstrap-header">
+    <div class="container" id="myDIV">
+      
+        <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menú</i></a>
+        <div class="mobile-menu-overlay"></div>
+
+       <nav role="navigation" class="probootstrap-nav hidden-xs">
+          <ul class="probootstrap-main-nav">
+            <li><a href="index-logged.html">Randalls</a></li>
+            <li><a href="listadocatalogo.html">Catálogo</a></li>
+            <li><a>Administrador </a>     </li>
+            <li><a href="listado_n.html">Lista de productos</a></li>
+            <li><a href="listapedidos.html">Listado de órdenes</a></li>
+            <li><a href="logout.html">Cerrar Sesión</a></li>    
+          </ul>
+          <div class="extra-text visible-xs"> 
+            <a href="#" class="probootstrap-burger-menu"><i>Menú</i></a>
+            <p>Dirección</p><p>
+            </p><p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            <p>Contactar</p>
+            <ul class="social-buttons">
+              <li><a href="https://www.twitter.com/Randalls"><i class="icon-twitter"></i></a></li>
+              <li><a href="https://www.facebook.com/Randalls/"><i class="icon-facebook2"></i></a></li>
+              <li><a href="https://www.instagram.com/Diegojp13"><i class="icon-instagram2"></i></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("myDIV");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  if (current.length > 0) { 
+    current[0].className = current[0].className.replace(" active", "");
+  }
+  this.className += " active";
+  });
+}
+</script>
+  </header>
+  
+  <!-- END: header -->  
+
+	      <div class="probootstrap-main" style="    margin-top: 100px">
+
+   <!--Listado-->
+
+<section class="probootstrap-section-half ">
+      <div class="container">
+
+      	<div class="row text-center">
+      		 <span style="font-size: 70px;">Listado de Órdenes</span>
+      	</div>
+
+ <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID ORDEN</th>
+      <th scope="col">ID CLIENTE</th>
+      <th scope="col">DETALLES ORDEN</th>
+
+    </tr>
+  </thead>
+  <tbody>
+           
+     <tr>
+     	<td> 39</td>
+      <td>27</td>
+      <td> <a style="cursor:pointer;" onclick="getdetails(39)"><i>Detalles</i></a></td>
+      <td> <a style="cursor:pointer;" onclick="getdetails(39)"></a></td>
+
+     </tr>
+       
+     <tr>
+     	<td> 38</td>
+      <td>30</td>
+      <td> <a style="cursor:pointer;" onclick="getdetails(38)"><i>Detalles</i></a></td>
+      <td> <a style="cursor:pointer;" onclick="getdetails(38)"></a></td>
+
+     </tr>
+      
+    
+
+  </tbody>
+
+</table>
+        
+      </div>
+    </section>
+  
+
+  </div>
+
+<!-- Modal - Details -->
+<div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">Detalles</h4>
+            </div>
+              <div class="modal-body">
+     <div class="row">
+
+        <div class="col-md-12">
+   <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ISBN </th>
+      <th scope="col">TITULO</th>
+      <th scope="col">CANTIDAD</th>
+      <th scope="col">PRECIO</th>
+      <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody id="results"><tr><td>2</td><td>Galletas Oreo</td><td>1</td><td>8000.00</td><td>8000.00</td></tr></tbody>
+
+</table>
+
+    <span> Total a pagar   <span id="total" class="text-left">8000</span>$</span>
+        </div>        
+
+        </div>
+      </div>  
+            <div class="modal-footer">
+                                 <a href="recibopdf.html?id=39&amp;total=8000" id="descarga" title=""> <span class="icon-download3"></span></a>
+       <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+  
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // Modal -->
+
+
+
+
+
+
+  
+  <script src="js/scripts.min.js"></script>
+  <script src="js/main.min.js"></script>
+  <script src="js/custom.js"></script>
+  
+
+  <script type="text/javascript">
+    function getdetails(id) {
+    // Add User ID to the hidden field for furture usage
+
+    $.post("ajax/getdetailcompra.html", {
+            id: id
+        },
+        function (data, status) {
+            // PARSE json data
+            var datos = JSON.parse(data);
+             var result = $("#results");
+
+    
+                    var html = "";
+                   
+                    var suma=0;
+                    $.each(datos, function(i, compra) 
+                    { link= 'recibopdf.html?id='+compra.ID_PEDIDO;
+
+                      suma += parseFloat(compra.Total);
+                      html += "<tr><td>"+compra.ISBN+"</td><td>"+compra.NOMBRE_PUBLICACION+"</td><td>"+compra.CANTIDAD+"</td><td>"+compra.PRECIO+"</td><td>"+compra.Total+"</td></tr>";
+                    });
+
+                    var rounded = Math.round(suma * 10) / 10;
+                    $('#total').html(rounded);
+                    console.log(link+'&total='+rounded);
+                    $('#descarga').attr('href',link+'&total='+rounded)
+                    $(result).html(html);
+            });
+
+    // Open modal popup
+    $("#update_user_modal").modal("show");
+}
+  </script>
+</body>
+</html>
